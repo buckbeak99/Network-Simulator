@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="727.0" style="-fx-background-color: #0B0E13;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProjectController">
+   <children>
+      <ScrollPane layoutX="9.0" layoutY="10.0" prefHeight="729.0" prefWidth="708.0" style="-fx-background-color: #0B0E13;">
+         <content>
+            <AnchorPane prefHeight="728.0" prefWidth="707.0" style="-fx-background-color: #455a64;">
+               <children>
+                  <Text layoutX="112.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Network Simulator" textAlignment="CENTER" wrappingWidth="466.966796875">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.9855769230769231" startX="1.0" startY="0.23557692307692302">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color opacity="0.9405084848403931" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.007407407407407408">
+                                 <color>
+                                    <Color opacity="0.9405084848403931" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.9111111111111111">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.31578946113586426" green="0.008771929889917374" blue="0.008771929889917374" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <Text layoutX="215.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Predict Path Loss in dB">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.9663461538461539" startX="1.0" startY="0.3701923076923077">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color opacity="0.9405084848403931" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.16666666666666669">
+                                 <color>
+                                    <Color opacity="0.9405084848403931" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.8947368264198303" green="0.8947368264198303" blue="0.8947368264198303" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <AnchorPane layoutX="22.0" layoutY="59.0" prefHeight="319.0" prefWidth="646.0" style="-fx-background-color: #607d8b;">
+                     <children>
+                        <AnchorPane layoutX="13.0" layoutY="15.0" prefHeight="287.0" prefWidth="241.0" style="-fx-background-color: #546e7a;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Cell Type" />
+                              <TextField fx:id="areaSize" layoutX="153.0" layoutY="37.0" prefHeight="26.0" prefWidth="62.0" promptText="e.g. 2" />
+                              <Text fill="WHITE" layoutX="17.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Area Size to cover" />
+                              <TextField fx:id="cellRadius" layoutX="153.0" layoutY="76.0" prefHeight="26.0" prefWidth="59.0" promptText="e.g. 2" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius of each cell" />
+                              <Text fill="#fff9f9" layoutX="14.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency Reuse &#10;Factor, N&#10;" />
+                              <TextField fx:id="channelTraffic" layoutX="151.0" layoutY="116.0" prefHeight="26.0" prefWidth="63.0" promptText="e.g. 2" />
+                              <Text fill="WHITE" layoutX="15.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Traffic" />
+                              <TextField fx:id="frequencyReuse" layoutX="148.0" layoutY="156.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g. 2" />
+                              <RadioButton fx:id="radioButtonMacroCell" layoutX="71.0" layoutY="230.0" mnemonicParsing="false" text="Macro Cell" textFill="#dddddd">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="cell" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="radioButtonMicroCell" layoutX="71.0" layoutY="253.0" mnemonicParsing="false" text="Micro Cell" textFill="#e8e5e5" toggleGroup="$cell" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="391.0" layoutY="16.0" prefHeight="287.0" prefWidth="241.0" style="-fx-background-color: #546e7a;">
+                           <children>
+                              <Text fill="#fffefe" layoutX="55.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cell Numbers" />
+                              <TextField fx:id="totalCellNumber" editable="false" layoutX="64.0" layoutY="45.0" mouseTransparent="true" prefHeight="26.0" prefWidth="106.0" />
+                              <Text fill="WHITE" layoutX="32.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Number of Channels" />
+                              <TextField fx:id="totalChannelNumber" editable="false" layoutX="62.0" layoutY="100.0" mouseTransparent="true" prefHeight="26.0" prefWidth="109.0" />
+                              <Text fill="WHITE" layoutX="37.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Channel Capacity" />
+                              <TextField fx:id="totalChannelCapacity" editable="false" layoutX="59.0" layoutY="160.0" mouseTransparent="true" prefHeight="26.0" prefWidth="112.0" />
+                              <TextField fx:id="totalConcurrentCall" editable="false" layoutX="59.0" layoutY="223.0" mouseTransparent="true" prefHeight="26.0" prefWidth="112.0" />
+                              <Text fill="WHITE" layoutX="17.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Number of Concurrent Call" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="buttorCalculate" contentDisplay="CENTER" graphicTextGap="9.0" layoutX="276.0" layoutY="123.0" mnemonicParsing="false" onAction="#calculate" prefHeight="66.0" prefWidth="94.0" style="-fx-background-color: #a9b8ae;" text="Calculate">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="22.0" layoutY="422.0" prefHeight="274.0" prefWidth="647.0" style="-fx-background-color: #607d8b;">
+                     <children>
+                        <AnchorPane layoutX="11.0" layoutY="17.0" prefHeight="236.0" prefWidth="337.0" style="-fx-background-color: #546e7a;">
+                           <children>
+                              <Text fill="WHITE" layoutX="21.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Area Type : " />
+                              <TextField fx:id="transmittingHeight" layoutX="49.0" layoutY="91.0" prefHeight="26.0" prefWidth="76.0" promptText="30-300m" />
+                              <Text fill="WHITE" layoutX="18.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height of Transmitting and Receiving antenna," />
+                              <TextField fx:id="carrierFrequency" layoutX="176.0" layoutY="20.0" prefHeight="26.0" prefWidth="141.0" promptText="150-1500 MHz" />
+                              <Text fill="#fff9f9" layoutX="19.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrier Frequency, fc : " />
+                              <Text fill="WHITE" layoutX="21.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ht :" />
+                              <Text fill="#fff9f9" layoutX="153.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hr : " />
+                              <TextField fx:id="receivingHeight" layoutX="201.0" layoutY="91.0" prefHeight="26.0" prefWidth="117.0" promptText="1-10m" />
+                              <TextField fx:id="propagationDistance" layoutX="200.0" layoutY="130.0" prefHeight="26.0" prefWidth="117.0" promptText="1-20km" />
+                              <Text fill="#fffafa" layoutX="19.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City Size: " wrappingWidth="65.8095703125" />
+                              <RadioButton fx:id="radioButtonSmall" layoutX="98.0" layoutY="196.0" mnemonicParsing="false" text="Small" textFill="#dadada">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="city" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="radioButtonMedium" layoutX="165.0" layoutY="197.0" mnemonicParsing="false" text="Medium" textFill="#cdcdcd" toggleGroup="$city" />
+                              <RadioButton fx:id="radioButtonLarge" layoutX="257.0" layoutY="197.0" mnemonicParsing="false" text="Large" textFill="#c9c9c9" toggleGroup="$city" />
+                              <RadioButton fx:id="radioButtonUrban" layoutX="100.0" layoutY="165.0" mnemonicParsing="false" text="Urban" textFill="#c9c9c9">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="area" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="radioButtonSuburban" layoutX="167.0" layoutY="166.0" mnemonicParsing="false" text="Sub-Urban" textFill="#c9c9c9" toggleGroup="$area" />
+                              <RadioButton fx:id="radioButtonOpen" layoutX="261.0" layoutY="168.0" mnemonicParsing="false" text="Open" textFill="#c9c9c9" toggleGroup="$area" />
+                              <Text fill="#fffdfd" layoutX="18.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Propagation Distance, d :" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="480.0" layoutY="17.0" prefHeight="234.0" prefWidth="156.0" style="-fx-background-color: #546e7a;">
+                           <children>
+                              <Text fill="WHITE" layoutX="28.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Path Loss">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="pathLoss" editable="false" layoutX="13.0" layoutY="124.0" mouseTransparent="true" prefHeight="26.0" prefWidth="129.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="buttonCalculate2" contentDisplay="CENTER" graphicTextGap="9.0" layoutX="366.0" layoutY="105.0" mnemonicParsing="false" onAction="#lossCalculate" prefHeight="66.0" prefWidth="97.0" style="-fx-background-color: #a9b8ae;" text="Calculate">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
